@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 import { Checkbox } from '../atoms/Checkbox'
 import { Container } from '../atoms/Container'
 import { Typography } from '../atoms/Typography'
@@ -9,19 +7,23 @@ interface TaskProps {
   active: boolean
   content: string
   onDeleteClick: () => void
+  onFinishedClick: () => void
 }
 
-export const Task = ({ active, content, onDeleteClick }: TaskProps) => {
-  const [isChecked, setIsChecked] = useState<boolean>(active)
-
+export const Task = ({
+  active,
+  content,
+  onDeleteClick,
+  onFinishedClick,
+}: TaskProps) => {
   const handleCheckBoxOnClick = () => {
-    setIsChecked((value) => !value)
+    onFinishedClick()
   }
 
   return (
     <Container>
-      <Checkbox onClick={handleCheckBoxOnClick} active={isChecked} />
-      <Typography isDashed={isChecked}>{content}</Typography>
+      <Checkbox onClick={handleCheckBoxOnClick} active={active} />
+      <Typography isDashed={active}>{content}</Typography>
       <DeleteTaskButton onClick={onDeleteClick} />
     </Container>
   )
