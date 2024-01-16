@@ -17,6 +17,7 @@ export const NewTaskForm = ({ addNewTask }: NewTaskForm) => {
 
   const handleNewTaskClick = () => {
     addNewTask(newTask)
+    setNewTask('')
   }
 
   return (
