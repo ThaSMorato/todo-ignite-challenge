@@ -1,17 +1,20 @@
 import { Check } from 'phosphor-react'
-import { useState } from 'react'
+import { MouseEvent } from 'react'
 
 import styles from './styles.module.css'
 
-export const Checkbox = () => {
-  const [isChecked, setIsChecked] = useState<boolean>(false)
+interface CheckBoxProps {
+  active: boolean
+  onClick: (event: MouseEvent<Element>) => void
+}
 
+export const Checkbox = ({ active, onClick }: CheckBoxProps) => {
   return (
     <div
-      className={`${styles.checkbox} ${isChecked ? styles['checkbox-checked'] : styles['checkbox-unchecked']}`}
-      onClick={() => setIsChecked((val) => !val)}
+      className={`${styles.checkbox} ${active ? styles['checkbox-checked'] : styles['checkbox-unchecked']}`}
+      onClick={(e) => onClick(e)}
     >
-      {isChecked && <Check weight="bold" />}
+      {active && <Check weight="bold" />}
     </div>
   )
 }
