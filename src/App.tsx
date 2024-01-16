@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import { Header } from './components/molecules/Header'
+import { ZeroTask } from './components/molecules/ZeroTask'
 import { NewTaskForm } from './components/organisms/NewTaskForm'
 import { Task } from './components/organisms/Task'
 import styles from './styles.module.css'
@@ -65,17 +66,21 @@ function App() {
                 </span>
               </p>
             </div>
-            <div className={styles.list}>
-              {tasks.map((task) => (
-                <Task
-                  key={task.id}
-                  content={task.content}
-                  active={task.isFinished}
-                  onDeleteClick={() => deleteTask(task.id)}
-                  onFinishedClick={() => concludeTask(task.id)}
-                />
-              ))}
-            </div>
+            {tasks.length > 0 ? (
+              <div className={styles.list}>
+                {tasks.map((task) => (
+                  <Task
+                    key={task.id}
+                    content={task.content}
+                    active={task.isFinished}
+                    onDeleteClick={() => deleteTask(task.id)}
+                    onFinishedClick={() => concludeTask(task.id)}
+                  />
+                ))}
+              </div>
+            ) : (
+              <ZeroTask />
+            )}
           </div>
         </div>
       </main>
