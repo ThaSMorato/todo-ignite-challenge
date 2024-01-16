@@ -1,7 +1,8 @@
 import { ChangeEvent, useState } from 'react'
 
-import { AddNewTaskButton } from '../molecules/AddNewTaskButton'
-import { AddNewTaskInput } from '../molecules/AddNewTaskInput'
+import { AddNewTaskButton } from '../../molecules/AddNewTaskButton'
+import { AddNewTaskInput } from '../../molecules/AddNewTaskInput'
+import styles from './styles.module.css'
 
 interface NewTaskForm {
   addNewTask: (taskContent: string) => void
@@ -19,7 +20,7 @@ export const NewTaskForm = ({ addNewTask }: NewTaskForm) => {
   }
 
   return (
-    <div>
+    <div className={styles.formContainer}>
       <AddNewTaskInput value={newTask} onChange={handleOnNewTaskChange} />
       <AddNewTaskButton onClick={handleNewTaskClick} />
     </div>
