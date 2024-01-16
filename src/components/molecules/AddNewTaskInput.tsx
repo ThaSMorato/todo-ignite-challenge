@@ -5,12 +5,17 @@ import { Input } from '../atoms/Input'
 
 interface AddNewTaskInputProps {
   onChange: (event: ChangeEvent<HTMLInputElement>) => void
+  value: string
 }
 
-export const AddNewTaskInput = ({ onChange }: AddNewTaskInputProps) => {
+export const AddNewTaskInput = ({ onChange, value }: AddNewTaskInputProps) => {
   return (
     <Container>
-      <Input placeholder="Adicione uma nova tarefa" onChange={onChange} />
+      <Input
+        value={value}
+        placeholder="Adicione uma nova tarefa"
+        onChange={onChange}
+      />
     </Container>
   )
 }
