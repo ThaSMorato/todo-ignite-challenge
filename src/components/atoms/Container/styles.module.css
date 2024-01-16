@@ -1,6 +1,6 @@
 .container {
   background-color: var(--gray-500);
-  max-width: max-content;
+  max-width: 100%;
   padding: 16px;
   display: flex;
   align-items: flex-start;
