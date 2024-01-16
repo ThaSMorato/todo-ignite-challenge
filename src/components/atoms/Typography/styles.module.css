@@ -1,0 +1,10 @@
+.typography {
+  line-height: 140%;
+  color: var(--gray-100);
+  font-size: 0.875rem;
+}
+
+.dashed {
+  color: var(--gray-300);
+  text-decoration: line-through;
+}
