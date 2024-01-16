@@ -1,0 +1,16 @@
+.input {
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  line-height: 140%;
+  color: var(--gray-100);
+  width: 100%;
+}
+
+.input::placeholder {
+  color: var(--gray-300);
+}
+
+.input:focus {
+  outline: 0;
+}
