@@ -33,5 +33,5 @@
   cursor: pointer;
   background-color: var(--gray-400);
   color: var(--danger);
-  transition: all 0.2 ease;
+  transition: all 0.2s ease;
 }
